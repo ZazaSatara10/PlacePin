@@ -493,6 +493,14 @@
       <div id="list" class="saved-list">(none)</div>
       <button id="clearAll" class="btn btn-danger">Clear All</button>
     </section>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="Privacy Policy.html">Privacy Policy</a>
+      </div>
+      <div class="muted">© 2026 Pinpal</div>
+    </div>
   </main>
 
   <script>
@@ -621,7 +629,7 @@
       items.forEach((it,idx)=>{
         const el = document.createElement('div'); el.className='loc'
         const left = document.createElement('div'); left.className='loc-main'
-        left.innerHTML = `<span class="loc-name">${escapeHtml(it.name||'Saved location')}</span><div class="loc-meta">${it.lat.toFixed(6)}, ${it.lng.toFixed(6)} • ${new Date(it.ts).toLocaleString()}</div>`
+        left.innerHTML = `<span class="loc-name">${escapeHtml(it.name||'Saved location')}</span><div class="loc-meta">${it.lat.toFixed(6)}, ${it.lng.toFixed(6)} • ${new Date(it.ts).toLocaleStri[...]`
         const right = document.createElement('div'); right.className='loc-actions'
         const showBtn = document.createElement('button'); showBtn.className='btn btn-secondary'; showBtn.textContent='Show on Map'
         showBtn.onclick = ()=>{
@@ -703,7 +711,7 @@
       const stepsEl = document.getElementById('permSteps')
       let html = ''
       if(!window.isSecureContext){
-        html += '<p><strong>Note:</strong> This page is not served over HTTPS. Geolocation requires a secure context (HTTPS) or localhost. Serve the page over HTTPS or open it from <em>http://localhost</em>.</p>'
+        html += '<p><strong>Note:</strong> This page is not served over HTTPS. Geolocation requires a secure context (HTTPS) or localhost. Serve the page over HTTPS or open it from <em>http://loc[...]'
       }
       if(platform === 'android'){
         html += '<ol>'+
