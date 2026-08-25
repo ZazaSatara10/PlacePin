@@ -39,6 +39,9 @@
       color: var(--text);
       padding: var(--pad);
       -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     button, input, select {
@@ -48,6 +51,8 @@
     .app-shell {
       max-width: 980px;
       margin: 0 auto;
+      flex: 1;
+      width: 100%;
     }
 
     .topbar {
@@ -102,6 +107,7 @@
       cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
       min-height: 48px;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -308,6 +314,34 @@
       margin-top: 8px;
     }
 
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-strong);
+      text-decoration: underline;
+    }
+
     @media (max-width: 720px) {
       body {
         padding: 12px;
@@ -342,6 +376,10 @@
 
       .loc-actions .btn {
         flex: 1 1 120px;
+      }
+
+      .footer-links {
+        gap: 12px;
       }
     }
 
@@ -455,6 +493,14 @@
       <div id="list" class="saved-list">(none)</div>
       <button id="clearAll" class="btn btn-danger">Clear All</button>
     </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="PRIVACY_POLICY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="ABOUT.md" target="_blank" rel="noopener noreferrer">About</a>
+      </div>
+      <p>&copy; 2026 Pinpal. All rights reserved.</p>
+    </footer>
   </main>
 
   <script>
@@ -665,7 +711,7 @@
       const stepsEl = document.getElementById('permSteps')
       let html = ''
       if(!window.isSecureContext){
-        html += '<p><strong>Note:</strong> This page is not served over HTTPS. Geolocation requires a secure context (HTTPS) or localhost. Serve the page over HTTPS or open it from <em>http://localhost</em> during development.</p>'
+        html += '<p><strong>Note:</strong> This page is not served over HTTPS. Geolocation requires a secure context (HTTPS) or localhost. Serve the page over HTTPS or open it from <em>http://localhost</em>.</p>'
       }
       if(platform === 'android'){
         html += '<ol>'+
@@ -778,4 +824,3 @@
   </script>
 </body>
 </html>
-
