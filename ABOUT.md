@@ -43,7 +43,6 @@ Pinpal is a lightweight, privacy-first web application that helps you save and n
 ## Why Pinpal?
 
 - **No Sign-Up Required**: Start using immediately without creating an account.
-- **No Ads or Tracking**: We don't sell your data or show intrusive ads.
 - **Lightweight**: Fast load times and minimal resource usage.
 - **Reliable**: Built with progressive enhancement for consistent experience.
 - **Accessible**: Fully keyboard navigable and screen reader friendly.
